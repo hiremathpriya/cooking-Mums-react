@@ -1,19 +1,52 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+//import './App.css';
+import Header from './Header';
+import RollingImages from './RollingImages';
+import CateringOrder from './CateringOrder';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
+import RecipeSumamry from './RecipeSummary';
 
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <header className="App-header"></header>
+          
+         {/* <RollingImages */}
+         {/* <CateringOrder />*/}
+           <Route path="/Header" exact strict Component={Header}/>
+
+           <Route path="/" exact render={
+            ()=> {
+              return(
+                <div>
+                  <Header title="Cooking Mums"/>
+                  <div className="row">
+                    <RecipeSumamry />
+                    <RecipeSumamry />
+                    <RecipeSumamry />
+                  </div>
+                  
+                </div>
+              )
+            }
+            }/>
+            
+            <Route path="/RollingImages" exact render={
+            ()=> {
+              return(<RollingImages/>)
+            }
+            }/>
+            <Route path="/CateringOrder"  exact render={
+            ()=> {
+              return(<CateringOrder/>)
+            }
+            }/>
       </div>
+      </Router>
     );
   }
 }
