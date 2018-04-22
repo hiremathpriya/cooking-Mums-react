@@ -1,0 +1,89 @@
+.header{
+  text-align: center;
+}
+.footer {
+  position: relative;
+  bottom: 0px;
+  text-align: center;
+}
+.pots {
+  height: 300px;
+  width: 300px;
+}
+.Header-pots {
+  height: 300px;
+  width: 600px;
+}
+.form {
+  
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.submit {
+  margin:15px;
+  padding: 10px;
+  background-color:rgb(180, 169, 169);
+  border-radius: 20%;
+  
+}
+
+
+.text {
+  margin: 15px;
+  padding:5px;
+  text-align-last: auto;
+}
+
+.customer-label {
+
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}
+
+.order-label {
+
+  display: inline-block;
+  width: 250px;
+  text-align: left;
+}
+
+.order-header {
+  display: inline-block;
+  width: 200px;
+}
+.rolling-images {
+  text-align: center;
+}
+.navlink {
+  margin: 10%;
+  padding: 10%;
+  display: inline-block;
+}
+
+.recipe-summary-image {
+  width: 300px;
+}
+
+body {
+  /* background-image: url(/images/kitchen-wallpaper.jpg); */
+  display: flex;
+}
+
+.no-background {
+
+  background-image: none;
+}
+
+.site-container {
+
+  /*background-color: lightgrey;*/
+  margin-left: 10vw;
+  margin-right: 10vw;
+  align-content: center;
+  border: 1px solid lightgrey;
+  height: 100%;
+  position: relative;
+  
+}
