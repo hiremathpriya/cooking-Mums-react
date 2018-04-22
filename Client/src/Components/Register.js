@@ -7,12 +7,14 @@ class Register extends Component {
         super(props);
         this.state = {
             name: '', 
-            email: ''
+            email: '',
+            responseText: ''
         };
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.register = this.register.bind(this);
+        this.finishRegistration = this.finishRegistration.bind(this);
     } 
     
     handleChange(event) {
@@ -29,7 +31,9 @@ class Register extends Component {
     }
     
     finishRegistration(err, res) {
-        console.log(res) 
+        console.log('received response inside component' , res.text);
+        this.setState({responseText: res.text});
+
     }
 
     register(e) {
@@ -42,6 +46,7 @@ class Register extends Component {
 
         return (
             <div>
+                {this.state.responseText.length > 0 && <div name="responseText">{this.state.responseText}</div>}
                 <form onSubmit={this.handleSubmit}>
                     <h2>Register</h2>
                     <div className="form">

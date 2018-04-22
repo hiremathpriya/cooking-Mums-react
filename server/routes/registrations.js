@@ -1,10 +1,26 @@
 const express = require('express')
+const cors = require('cors')
 const router = express.Router()
+const db = require('../db')
+
+
+const corsOptions = {
+    origin: 'http://localhost:8080',
+    credentials: true,
+    methods: ['GET', 'POST', 'OPTIONS']
+}
+
+router.options('/', cors(corsOptions), (req, res) => {
+    console.log('inside options')
+})
 
 router.post('/', function (req, res) {
-//   res.json(db.getRegistrations())
-    console.log('Hi')
-    res.send('Hi')
+    const id = db.saveUser(req.body)
+    console.log('inserted user id is ' +  id)
+    console.log('Received name : ' + req.body.name);
+    console.log('Received email : ' + req.body.email);
+    //res.sendStatus(200)
+    res.send('Thank you for registering !!!');
 })
 
 router.get("/", (req, res) => {
