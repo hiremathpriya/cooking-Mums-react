@@ -60,20 +60,22 @@
  body {
   /* background-image: url(/images/kitchen-wallpaper.jpg);  */
    display: flex;
-   
+   background-image: url(/images/background.jpg)
 }  
 
 
 .site-container {
 
   
-  margin-left: 10vw;
+  margin-left: 8vw;
   margin-right: 10vw;
+  margin-top: 20px;
   align-content: center;
-  border: 1px solid lightgrey;
-  /* height: 100%; */
+  border: 1px solid blue;
+   /* height: 100%; */
   position: relative;
-  
+  padding:10px;
+  background-color: white;
 }
 .message {
   display: inline-block;
@@ -95,4 +97,14 @@
 ul {
   margin: 30px;
   line-height: 45px;
+}
+
+.footer {
+  /* background-color: none !important; */
+  /* background-image: url(/images/background.jpg) */
+  width: 40vw;
+  margin-left: 30vw;
+}
+.navbar {
+  margin-top: 10px; 
 }

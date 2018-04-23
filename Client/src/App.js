@@ -9,50 +9,77 @@ import Recipes from './Components/Recipes';
 import Footer from './Components/Footer';
 import Register from './Components/Register';
 import AboutMe from './Components/AboutMe';
+// import image from '../../images/background.jpg';
 
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Route} from 'react-router-dom';
 
 
 const imagesArr = [
-  'images/0001.jpg',
-  'images/0002.jpg',
-  'images/0003.jpg',
   'images/0004.jpg',
-  'images/0005.jpg',
   'images/0006.jpg',
   'images/0008.jpg',
   'images/0010.jpg',
   'images/0011.jpg',
   'images/0012.jpg',
   'images/0013.jpg',
-  'images/0014.jpg',
   'images/0015.jpg',
-  'images/0016.jpg',
   'images/0017.jpg',
-  'images/0018.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
-  'images/0019.jpg',
+  'images/0027.jpg',
+  'images/0028.jpg',
+  'images/0033.jpg',
+  'images/0035.jpg',
+  'images/0037.jpg',
+  'images/0040.jpg',
+  'images/0044.jpg',
+  'images/0046.jpg',
+  'images/0048.jpg',
+  'images/0052.jpg',
+  'images/0055.jpg',
+  'images/0059.jpg',
+  'images/0060.jpg',
+  'images/0061.jpg',
+  'images/0064.jpg',
+  'images/0065.jpg',
+  'images/0066.jpg',
+  'images/0067.jpg',
+  'images/0072.jpg',
+  'images/0083.jpg',
+  'images/0085.jpg',
+  'images/0086.jpg',
+  'images/0088.jpg',
+  'images/0089.jpg',
+  'images/0102.jpg',
+  'images/0105.jpg',
+  'images/0106.jpg',
+  'images/0107.jpg',
+  'images/0109.jpg',
+  'images/0110.jpg',
+  'images/0113.jpg',
+  'images/0114.jpg',
+  'images/0117.jpg',
+  'images/0118.jpg',
+  'images/0119.jpg',
+  'images/0120.jpg',
+  'images/0122.jpg',
+  'images/0123.jpg',
+  'images/0124.jpg',
+  'images/0128.jpg',
+  'images/0129.jpg',
+  'images/0130.jpg',
+  'images/0133.jpg',
+  'images/0134.jpg',
+  'images/0135.jpg',
 
 ];
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      imagesArr
+    }
+  }
   render() {
 
     console.log('images ' + imagesArr);
@@ -60,45 +87,48 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
+      <div className="site-container">
         <Header title="Cooking Mums"/>
-        <CoverFlow width={1200}height={325} background="gray" imagesArr={imagesArr} />
+          <CoverFlow width={1200}height={350} background="black" imagesArr={this.state.imagesArr} />
 
-            <Route path="/" exact render={
-              ()=> {
-                return(              
-              <div className="container">
-                  <div class="row">
-                      <div class="col-xs-6">
-                          <Message />
-                      </div>
-                      <div class="col-xs-6">
-                          <Recipes />
-                      </div>
-                  </div>
-              </div>
-                    
-                 
-                )
-              }
-            }/>
-                        
-            <Route path="/CateringOrder"  exact render={
-              ()=> {
-                return(<CateringOrder/>)
-              }
-            }/>
+              <Route path="/" exact render={
+                ()=> {
+                  return(              
+                <div className="container">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <Message />
+                        </div>
+                        <div class="col-xs-6">
+                            <Recipes />
+                        </div>
+                    </div>
+                </div>
+                      
+                  
+                  )
+                }
+              }/>
+                          
+              <Route path="/CateringOrder"  exact render={
+                ()=> {
+                  return(<CateringOrder/>)
+                }
+              }/>
 
-            <Route path="/Register"  exact render={
-              ()=> {
-                return(<Register/>)
-              }
-            }/>
+              <Route path="/Register"  exact render={
+                ()=> {
+                  return(<Register/>)
+                }
+              }/>
 
-            <Route path="/AboutMe"  exact render={
-              ()=> {
-                return(<AboutMe/>)
-              }
-            }/>
+              <Route path="/AboutMe"  exact render={
+                ()=> {
+                  return(<AboutMe/>)
+                }
+        }/>
+      </div>
+        
             
             <Footer/>   
 
